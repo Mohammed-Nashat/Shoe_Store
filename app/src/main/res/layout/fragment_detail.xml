@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.example.shoestore.models.Shoe" />
+    </data>
+<!-- linearLayout to Displays how the user fills in the data -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".screens.detail.DetailFragment">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/title_style"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/larg_margin"
+            android:text="@string/detail" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/ftShoeName"
+            style="@style/textField_style"
+            android:hint="@string/detail_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edName"
+                android:layout_width="match_parent"
+                android:text="@={shoe.name}"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/ftCompany"
+            style="@style/textField_style"
+            android:hint="@string/detail_company">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={shoe.company}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/ftShoeSize"
+            style="@style/textField_style"
+            android:hint="@string/detail_size">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={shoe.sizeString}"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:id="@+id/ftDescription"
+            style="@style/textField_style"
+            android:hint="@string/detail_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={shoe.description}"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+<!--this layout for buttons , save or cancel-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/larg_margin"
+                android:layout_marginEnd="@dimen/larg_margin"
+                android:gravity="center"
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/btCancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
